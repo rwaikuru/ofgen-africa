@@ -48,13 +48,13 @@ export default function DashboardPage() {
                 trend="down"
                 icon={<Battery className="h-4 w-4" />}
               />
-              <MetricCard
+              {/* <MetricCard
                 title="Weather Conditions"
                 value="Mostly Sunny"
                 description="Across most sites"
                 trend="neutral"
                 icon={<CloudSun className="h-4 w-4" />}
-              />
+              /> */}
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
@@ -160,7 +160,7 @@ export default function DashboardPage() {
                   </div>
                 </CardContent>
               </Card>
-
+{/* 
               <Card>
                 <CardHeader>
                   <CardTitle>Weather Forecast</CardTitle>
@@ -201,7 +201,7 @@ export default function DashboardPage() {
                     ))}
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </TabsContent>
 

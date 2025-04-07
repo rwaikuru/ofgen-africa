@@ -35,6 +35,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -58,8 +59,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </SheetTrigger>
             <SheetContent side="left" className="w-72 pr-0">
               <div className="flex items-center gap-2 px-2">
-                <SunMedium className="h-6 w-6 text-yellow-500" />
-                <span className="text-lg font-bold">Ofgen Solar</span>
+                {/* <SunMedium className="h-6 w-6 text-yellow-500" /> */}
+                <Image
+                    src="/ofgenlogo.png"
+                    alt="Energy Saved"
+                    width={100}
+                    height={100}
+                    className={cn("h-5 w-5", !sidebarOpen && "h-4 w-4")}
+                    />
+                <span className="text-lg font-bold">Ofgen Africa</span>
               </div>
               <Separator className="my-4" />
               <MobileNav />
@@ -70,7 +78,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <span className="sr-only">Toggle Sidebar</span>
           </Button>
           <div className="hidden md:flex items-center gap-2">
-            <SunMedium className="h-6 w-6 text-yellow-500" />
+          <Image
+                    src="/ofgenlogo.png"
+                    alt="Energy Saved"
+                    width={150}
+                    height={150}
+                    className={cn("h-5 w-5", !sidebarOpen && "h-4 w-4")}
+                    />
+            {/* <SunMedium className="h-6 w-6 text-yellow-500" /> */}
             <span className="text-lg font-bold">Ofgen Solar</span>
           </div>
         </div>
@@ -233,13 +248,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
             <NavItem href="/service-orders" icon={<Wrench />} label="Service Orders" collapsed={!sidebarOpen} />
 
-            <NavItem href="/reports" icon={<ClipboardList />} label="Reports" collapsed={!sidebarOpen} />
+            {/* <NavItem href="/reports" icon={<ClipboardList />} label="Reports" collapsed={!sidebarOpen} /> */}
 
-            <NavItem href="/alerts" icon={<Bell />} label="Alerts" badge="5" collapsed={!sidebarOpen} />
+            {/* <NavItem href="/alerts" icon={<Bell />} label="Alerts" badge="5" collapsed={!sidebarOpen} /> */}
 
-            <NavItem href="/maintenance" icon={<Calendar />} label="Maintenance" collapsed={!sidebarOpen} />
+            {/* <NavItem href="/maintenance" icon={<Calendar />} label="Maintenance" collapsed={!sidebarOpen} /> */}
 
-            <NavItem href="/teams" icon={<Users />} label="Teams" collapsed={!sidebarOpen} />
+            {/* <NavItem href="/teams" icon={<Users />} label="Teams" collapsed={!sidebarOpen} /> */}
 
             <NavItem href="/users" icon={<UserIcon />} label="Users" collapsed={!sidebarOpen} />
 
@@ -253,14 +268,21 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <div className={cn("rounded-lg bg-green-50 dark:bg-green-900/20 p-4", !sidebarOpen && "p-2")}>
               <div className="flex items-center gap-3">
                 <div className="rounded-full bg-green-600 p-1.5 text-white">
-                  <SunMedium className={cn("h-5 w-5", !sidebarOpen && "h-4 w-4")} />
+                <Image
+                    src="/ofgenlogo.png"
+                    alt="Energy Saved"
+                    width={100}
+                    height={100}
+                    className={cn("h-5 w-5", !sidebarOpen && "h-4 w-4")}
+                    />
+                  {/* <SunMedium className={cn("h-5 w-5", !sidebarOpen && "h-4 w-4")} /> */}
                 </div>
-                {sidebarOpen && (
-                  <div>
-                    <p className="text-sm font-medium">Energy Saved</p>
-                    <p className="text-xs text-muted-foreground">+2.5% from last month</p>
-                  </div>
-                )}
+                {/* {sidebarOpen && (
+                  // <div>
+                  //   <p className="text-sm font-medium"></p>
+                  //   <p className="text-xs text-muted-foreground">+2.5% from last month</p>
+                  // </div>
+                )} */}
               </div>
             </div>
           </div>

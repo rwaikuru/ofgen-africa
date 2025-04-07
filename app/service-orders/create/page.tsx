@@ -367,7 +367,7 @@ export default function CreateServiceOrderPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="title">
-                        Service Title <span className="text-red-500">*</span>
+                        Issued By <span className="text-red-500">*</span>
                       </Label>
                       <Input
                         id="title"
@@ -381,22 +381,22 @@ export default function CreateServiceOrderPage() {
 
                     <div className="space-y-2">
                       <Label htmlFor="type">
-                        Service Type <span className="text-red-500">*</span>
+                        Site Type <span className="text-red-500">*</span>
                       </Label>
                       <Select value={formData.type} onValueChange={(value) => handleSelectChange("type", value)}>
                         <SelectTrigger id="type">
-                          <SelectValue placeholder="Select service type" />
+                          <SelectValue placeholder="Select Site type" />
                         </SelectTrigger>
-                        <SelectContent>
+                        {/* <SelectContent>
                           <SelectItem value="Installation">Installation</SelectItem>
                           <SelectItem value="Maintenance">Maintenance</SelectItem>
                           <SelectItem value="Repair">Repair</SelectItem>
                           <SelectItem value="Inspection">Inspection</SelectItem>
-                        </SelectContent>
+                        </SelectContent> */}
                       </Select>
                     </div>
                   </div>
-
+{/* 
                   <div className="space-y-2">
                     <Label htmlFor="description">Description</Label>
                     <Textarea
@@ -407,10 +407,10 @@ export default function CreateServiceOrderPage() {
                       onChange={handleInputChange}
                       rows={3}
                     />
-                  </div>
+                  </div> */}
 
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="space-y-2">
+                    {/* <div className="space-y-2">
                       <Label htmlFor="priority">Priority</Label>
                       <Select
                         value={formData.priority}
@@ -426,7 +426,7 @@ export default function CreateServiceOrderPage() {
                           <SelectItem value="Critical">Critical</SelectItem>
                         </SelectContent>
                       </Select>
-                    </div>
+                    </div> */}
 
                     <div className="space-y-2">
                       <Label>
@@ -461,8 +461,8 @@ export default function CreateServiceOrderPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Site & Technician</CardTitle>
-                  <CardDescription>Select the site and assign a technician</CardDescription>
+                  <CardTitle>Site Details</CardTitle>
+                  <CardDescription>Select the site</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
@@ -493,14 +493,14 @@ export default function CreateServiceOrderPage() {
 
                   <div className="space-y-2 mt-4">
                     <Label htmlFor="technicianId">
-                      Technician <span className="text-red-500">*</span>
+                      Issued by <span className="text-red-500">*</span>
                     </Label>
                     <Select
                       value={formData.technicianId}
                       onValueChange={(value) => handleSelectChange("technicianId", value)}
                     >
                       <SelectTrigger id="technicianId">
-                        <SelectValue placeholder="Assign technician" />
+                        <SelectValue placeholder="" />
                       </SelectTrigger>
                       <SelectContent>
                         {MOCK_TECHNICIANS.map((tech) => (
@@ -514,7 +514,7 @@ export default function CreateServiceOrderPage() {
 
                   {selectedTechnician && (
                     <div className="mt-2 p-3 bg-muted rounded-md">
-                      <div className="text-sm font-medium">Technician Details</div>
+                      <div className="text-sm font-medium">Contact Person Details</div>
                       <div className="text-sm">Specialization: {selectedTechnician.specialization}</div>
                       <div className={`text-sm ${selectedTechnician.availability ? "text-green-600" : "text-red-600"}`}>
                         {selectedTechnician.availability ? "Available" : "Not Available"}
@@ -683,7 +683,7 @@ export default function CreateServiceOrderPage() {
                 </CardContent>
               </Card>
 
-              <Card>
+              {/* <Card>
                 <CardHeader>
                   <CardTitle>Labor & Additional Costs</CardTitle>
                   <CardDescription>Estimate labor and other costs for this service</CardDescription>
@@ -784,10 +784,10 @@ export default function CreateServiceOrderPage() {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </TabsContent>
 
-            <TabsContent value="notes" className="space-y-4">
+            {/* <TabsContent value="notes" className="space-y-4">
               <Card>
                 <CardHeader>
                   <CardTitle>Additional Notes</CardTitle>
@@ -804,7 +804,7 @@ export default function CreateServiceOrderPage() {
                   />
                 </CardContent>
               </Card>
-            </TabsContent>
+            </TabsContent> */}
           </Tabs>
 
           <div className="mt-6 flex justify-between">
